@@ -89,6 +89,13 @@ REST_FRAMEWORK = {
     )
 }
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        'ROUTING': 'my_project.routing.websocket_routing',
+    },
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
