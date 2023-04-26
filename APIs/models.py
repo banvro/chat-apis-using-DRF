@@ -13,3 +13,12 @@ class User(AbstractUser):
     firebase_password = models.CharField(max_length=250, null=True, blank=True)
     firebase_uid = models.CharField(max_length=255, null=True, blank=True)
     profilepic = models.ImageField(upload_to='ProfilePic', null=True, blank=True)
+
+
+
+class Room(models.Model):
+    name = models.CharField(max_length=120)
+    slug = models.SlugField(unique=True)
+
+
+    
