@@ -53,6 +53,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ChatAPIs.urls'
+AUTH_USER_MODEL = "APIs.User"
+
+
 
 TEMPLATES = [
     {

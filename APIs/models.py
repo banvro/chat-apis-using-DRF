@@ -1,9 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 import uuid
   
-class User(models.Model):
+class User(AbstractUser):
     uid = models.UUIDField(primary_key = True, unique=True, default = uuid.uuid4, editable = False)
     username = models.CharField(max_length=250, unique=True, null=True, blank=True)
     email = models.EmailField(unique=True)
