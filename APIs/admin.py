@@ -7,7 +7,7 @@ class CustomUserAdmin(UserAdmin):
     list_display = ('uid', 'email', 'phone_number', 'first_name', 'is_active', 'date_joined') # Added last_login
     
     fieldsets = (
-        (None, {'fields': ('username', 'phone_number', 'email', 'uid', 'password')}),
+        (None, {'fields': ('username', 'phone_number', 'email', 'password')}),
         (('Personal info'), {'fields': ('first_name', 'last_name', 'firebase_uid', 'firebase_password', 'DateOfBirth', 'profilepic')}),
         (('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
@@ -16,3 +16,6 @@ class CustomUserAdmin(UserAdmin):
 
        
     )
+
+
+admin.site.register(User, CustomUserAdmin)
