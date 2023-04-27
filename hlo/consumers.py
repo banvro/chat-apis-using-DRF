@@ -17,8 +17,16 @@ class TestConsumer(WebsocketConsumer):
         }))
     
 
-    def receive(self):
-        pass
+    def receive(self, text_data):
+        print(text_data)
+        async_to_sync(self.channel_layer.group_send)(
+            "chat",
+            {
+                "type": "chat.message",
+                "text": text_data,
+            },
+        )
+        
     
 
     def disconnect(self):
