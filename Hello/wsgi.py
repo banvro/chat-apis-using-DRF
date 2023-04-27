@@ -1,5 +1,5 @@
 """
-WSGI config for ChatAPIs project.
+WSGI config for Hello project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ChatAPIs.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hello.settings')
 
 application = get_wsgi_application()
