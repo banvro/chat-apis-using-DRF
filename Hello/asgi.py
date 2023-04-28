@@ -19,7 +19,7 @@ django.setup()
 # application = get_asgi_application()
 from hlo.routing import *
 
-django_asgi_app = get_asgi_application()
+# django_asgi_app = get_asgi_application()
 
 
 
@@ -28,9 +28,9 @@ django_asgi_app = get_asgi_application()
 
 application = ProtocolTypeRouter(
     {
-        "http": django_asgi_app,
+        "http": get_asgi_application(),
         "websocket": AllowedHostsOriginValidator(
-            AuthMiddlewareStack(URLRouter(websocket_urlpatterns))
+            AuthMiddlewareStack(URLRouter(hlo.routing.websocket_urlpatterns))
         ),
     }
 )
