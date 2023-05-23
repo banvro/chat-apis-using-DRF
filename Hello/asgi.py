@@ -1,35 +1,16 @@
+
+
 """
-ASGI config for Hello project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/4.1/howto/deployment/asgi/
+ASGI entrypoint. Configures Django and then runs the application
+defined in the ASGI_APPLICATION setting.
 """
 
 import os
-from channels.auth import AuthMiddlewareStack
-from channels.routing import ProtocolTypeRouter, URLRouter
-from channels.security.websocket import AllowedHostsOriginValidator
-from django.core.asgi import get_asgi_application
+import django
+from decouple import config
+from channels.routing import get_default_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hello.settings')
-
-application = get_asgi_application()
-from hlo.routing import *
-
-django_asgi_app = get_asgi_application()
-
-
-
-
-
-
-application = ProtocolTypeRouter(
-    {
-        "http": django_asgi_app,
-        "websocket": AllowedHostsOriginValidator(
-            AuthMiddlewareStack(URLRouter(websocket_urlpatterns))
-        ),
-    }
-)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", 'Hello.settings')
+django.setup()
+application = get_default_application()
+    
