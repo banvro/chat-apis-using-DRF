@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1w6n@3w-u3797tfuscljbt4@p+rql+0j0z_%0-1y$8-6%((cxg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["89.117.37.186", "*"]
 
 
 # Application definition
@@ -52,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Hello.urls'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 TEMPLATES = [
     {
