@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1w6n@3w-u3797tfuscljbt4@p+rql+0j0z_%0-1y$8-6%((cxg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["api.whosthere.co", "www.api.whosthere.co"]
+ALLOWED_HOSTS = ["api.whosthere.co", "www.api.whosthere.co", "*"]
 
 
 # Application definition
@@ -75,25 +75,25 @@ ASGI_APPLICATION = "Hello.asgi.application"
 
 
 
-# CHANNEL_LAYERS = {
-#     "default": {
-#          'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         "CONFIG": {
-#             "hosts": [("127.0.0.1", 6379)]
-#         },
-
-#     },
-# }
-
-
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
+         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         "CONFIG": {
-            "hosts": [("redis-server-name", 6379)],
+            "hosts": [("127.0.0.1", 6379)]
         },
+
     },
 }
+
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("redis-server-name", 6379)],
+#         },
+#     },
+# }
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
