@@ -1,0 +1,4 @@
+sudo vim /etc/nginx/sites-available/whosthattest
+
+sudo rm /etc/nginx/sites-enabled/whosthattest
+sudo ln -s /etc/nginx/sites-available/whosthattest /etc/nginx/sites-enabled/
