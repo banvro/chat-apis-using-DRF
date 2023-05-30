@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 kvfkdsjavdvfdsfsdffd    
+=======
+kvfkdsjavdvfdsfsdffd
+>>>>>>> 2366955fc6e90186c01b8fb6c8a9d1e0f01526bb
