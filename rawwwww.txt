@@ -2,3 +2,36 @@ sudo vim /etc/nginx/sites-available/whosthattest
 
 sudo rm /etc/nginx/sites-enabled/whosthattest
 sudo ln -s /etc/nginx/sites-available/whosthattest /etc/nginx/sites-enabled/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Unit]
+Description=My Daphne Service
+After=network.target
+
+[Service]
+Type=simple
+User=whos
+WorkingDirectory=/home/whos/whosthat
+ExecStart=/home/whos/whosthat/env/bin/python /home/whos/whosthat/env/bin/daphne -b 0.0.0.0 -p 8001 Hello.asgi:application
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
