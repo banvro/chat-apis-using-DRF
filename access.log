@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicornchat daemon
+Requires=gunicornchat.socket
+After=network.target
+
+[Service]
+User=whos
+Group=www-data
+WorkingDirectory=/home/whos/whosthat
+ExecStart=/home/whos/whosthat/env/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicornchat.sock \
+          Hello.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
