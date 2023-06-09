@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1w6n@3w-u3797tfuscljbt4@p+rql+0j0z_%0-1y$8-6%((cxg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["test.whosthere.co", "www.test.whosthere.co", "*"]
+ALLOWED_HOSTS = ["chat.whosthere.co", "www.chat.whosthere.co", "*"]
 
 
 # Application definition
